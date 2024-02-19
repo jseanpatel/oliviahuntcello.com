@@ -9,18 +9,23 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
+  TwitterIcon,
   XIcon,
 } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoBillingsSymphonyOrchestra from '@/images/logos/billings-symphony-orchestra.png'
+import logoTerreHaute from '@/images/logos/terre-haute-symphony-orchestra.svg'
+import logoEvansvillePhilharmonic from '@/images/logos/evansville-philharmonic.png'
+import logoVanderbilt from "@/images/logos/vanderbilt.png"
+import logoSinfonietta from "@/images/logos/nashville-sinfonietta.png"
+
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { getAllArticles } from '@/lib/articles'
+import {  getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
 function MailIcon(props) {
@@ -99,8 +104,8 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="p-1 -m-1 group" {...props}>
+      <Icon className="w-6 h-6 transition fill-zinc-500 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
@@ -109,16 +114,16 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
+        <MailIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
-      <div className="mt-6 flex">
+      <div className="flex mt-6">
         <input
           type="email"
           placeholder="Email address"
@@ -126,7 +131,7 @@ function Newsletter() {
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
         />
-        <Button type="submit" className="ml-4 flex-none">
+        <Button type="submit" className="flex-none ml-4">
           Join
         </Button>
       </div>
@@ -145,12 +150,12 @@ function Role({ role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
+      <dl className="flex flex-wrap flex-auto gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+        <dd className="flex-none w-full text-sm font-medium text-zinc-900 dark:text-zinc-100">
           {role.company}
         </dd>
         <dt className="sr-only">Role</dt>
@@ -172,56 +177,152 @@ function Role({ role }) {
 }
 
 function Resume() {
-  let resume = [
+  let orchestralResume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Billings Symphony Orchestra',
+      title: 'Assistant principal cello',
+      logo: logoBillingsSymphonyOrchestra,
+      start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Terre Haute Symphony Orchestra',
+      title: 'Section cellist',
+      logo: logoTerreHaute,
+      start: '2021',
+      end: '2023',
+    },
+    {
+      company: 'Evansville Philharmonic',
+      title: 'Substitute cellist',
+      logo: logoEvansvillePhilharmonic,
+      start: '2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      company: 'Owensboro Symphony Orchestra',
+      title: 'Substitute cellist',
+      logo: logoStarbucks,
+      start: '2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      company: 'Vanderbilt Symphony Orchestra',
+      title: 'Principle cellist',
+      logo: logoVanderbilt,
+      start: '2019',
+      end: '2019'
+    },
+    {
+      company: 'Nashville Sinfonietta',
+      title: 'Principle cellist',
+      logo: logoSinfonietta,
+      start: '2019',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'National Music Festival Symphony Orchestra',
+      title: 'Principle cellist',
+      logo: logoStarbucks,
+      start: '2019',
+      end: '2019',
+    },
+  ]
+
+  let chamberResume = [
+    {
+      company: 'Performer with Bloomington folk artist Carrie Newcomer',
+      title: 'Principal cello',
+      logo: logoBillingsSymphonyOrchestra,
+      start: '2022',
+      end: '2022'
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
+      company: 'The Skylark Trio',
+      title: 'Founding cellist',
+      logo: logoAirbnb,
+      start: '2020',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
+      company: 'Vanderbilt University Chorale St. Matthew’s Passion tour',
+      title: 'Continuo cellist',
+      logo: logoVanderbilt,
+      start: '2018',
+      end: '2018',
+    },
+    {
+      company: 'Festival d’Aix en Provence',
+      title: 'String quartet performer',
       logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      start: '2017',
+      end: '2017',
+    },
+    {
+      company: '“A Humming Under My Feet”',
+      title: 'Annual performer',
+      logo: logoStarbucks,
+      start: '2017',
+      end: '2019',
     },
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
-        ))}
-      </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
-    </div>
+    <>
+      <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
+        <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+          <BriefcaseIcon className="w-6 h-6" />
+          <span className="ml-3">Orchestral experience</span>
+        </h2>
+        <ol className="mt-6 space-y-4">
+          {orchestralResume.map((role, roleIndex) => (
+            <Role key={roleIndex} role={role} />
+          ))}
+        </ol>
+        <Button variant="secondary" className="w-full mt-6 group">
+          <a
+            href="https://drive.google.com/file/d/1CSoTuah2tiZ_uQurmRGDjNkMAV4meBD8/view?usp=drive_link"
+            download="OliviaHunt-ArtisticResume.pdf"
+          >
+            View curriculum vitae
+          </a>
+          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+        
+      </div>
+      <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
+        <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+          <BriefcaseIcon className="w-6 h-6" />
+          <span className="ml-3">Chamber experience</span>
+        </h2>
+        <ol className="mt-6 space-y-4">
+          {chamberResume.map((role, roleIndex) => (
+            <Role key={roleIndex} role={role} />
+          ))}
+        </ol>
+        <Button variant="secondary" className="w-full mt-6 group">
+          <a
+            href="https://drive.google.com/file/d/1CSoTuah2tiZ_uQurmRGDjNkMAV4meBD8/view?usp=drive_link"
+            download="OliviaHunt-ArtisticResume.pdf"
+          >
+            View curriculum vitae
+          </a>
+          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </div>
+    </>
   )
 }
 
@@ -230,7 +331,7 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+      <div className="flex justify-center gap-5 py-4 -my-4 overflow-hidden sm:gap-8">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
@@ -243,7 +344,7 @@ function Photos() {
               src={image}
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 object-cover w-full h-full border-2 border-black rounded-2xl dark:border-white dark:border-zinc-700 "
             />
           </div>
         ))}
@@ -260,26 +361,22 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software designer, founder, and amateur astronaut.
+            Musician, teacher, friend.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+             Olivia Hunt is an orchestral player and chamber musician based in
+            Bloomington, Indiana. She has performed across the United States and
+            Europe. She is a private cello instructor and a lifelong learner of
+            music.
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="flex gap-6 mt-6">
             <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
               href="#"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
-            <SocialLink
-              href="#"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
+            
             <SocialLink
               href="#"
               aria-label="Follow on LinkedIn"
@@ -290,14 +387,14 @@ export default async function Home() {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
