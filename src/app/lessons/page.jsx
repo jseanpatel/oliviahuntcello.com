@@ -94,7 +94,7 @@ export default function About() {
           <div>
             <div>
               <div className="max-w-xl mx-auto lg:mx-0 lg:max-w-lg ">
-                <form action="#" method="POST" className="pt-8 mt-8 border-t border-gray-900/10 dark:border-zinc-400">
+                <form action="#" method="POST" className="pt-8 mt-8 border-t border-gray-900/10 dark:border-zinc-400" name="lesson-inquiry" netlify>
                 <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="">
                       <label
