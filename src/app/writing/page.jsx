@@ -69,7 +69,7 @@ export default async function ArticlesIndex() {
   return (
     <SimpleLayout
       title="Writing on music, teaching, and living as a performer"
-      intro="All of my long-form thoughts on the world of music collected in chronological order."
+      intro="All of my long-form thoughts on the world of music collected in chronological order"
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
        

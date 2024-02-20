@@ -15,10 +15,11 @@ import {
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoBillingsSymphonyOrchestra from '@/images/logos/billings-symphony-orchestra.png'
-import logoTerreHaute from '@/images/logos/terre-haute-symphony-orchestra.svg'
+import logoTerreHaute from '@/images/logos/thso.png'
 import logoEvansvillePhilharmonic from '@/images/logos/evansville-philharmonic.png'
 import logoVanderbilt from "@/images/logos/vanderbilt.png"
 import logoSinfonietta from "@/images/logos/nashville-sinfonietta.png"
+import logoOwensboro from "@/images/logos/owensboro.png"
 
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -208,7 +209,7 @@ function Resume() {
     {
       company: 'Owensboro Symphony Orchestra',
       title: 'Substitute cellist',
-      logo: logoStarbucks,
+      logo: logoOwensboro,
       start: '2022',
       end: {
         label: 'Present',
