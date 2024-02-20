@@ -58,9 +58,9 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: 'Articles',
+  title: 'Writing',
   description:
-    'All of my long-form thoughts on the world of music collected in chronological order.',
+    'All of my long-form thoughts on the world of music collected in chronological order',
 }
 
 export default async function ArticlesIndex() {

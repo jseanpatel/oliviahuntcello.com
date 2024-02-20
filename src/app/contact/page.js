@@ -47,9 +47,9 @@ function Appearance({
 }
 
 export const metadata = {
-  title: 'Speaking',
+  title: 'Contact',
   description:
-    'I’ve spoken at events all around the world and been interviewed for many podcasts.',
+    'Please fill out the form below and Olivia will get back to you as soon as possible.',
 }
 
 export default function Contact() {

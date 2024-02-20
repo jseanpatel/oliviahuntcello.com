@@ -7,10 +7,10 @@ export const metadata = {
   title: {
     template: '%s - Olivia Hunt',
     default:
-      'Olivia Hunt - Software designer, founder, and amateur astronaut',
+      'Olivia Hunt - orchestral and chamber cellist based in Bloomington, Indiana',
   },
   description:
-    'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+  'Olivia Hunt is a lifelong teacher and student of music. She currently lives in Bloomington, Indiana, where she is the Assistant Principal Cellist of the Billings Symphony and acts as a substitute in the Owensboro Symphony Orchestra and Evansville Philharmonic. In addition to performing she has a passion for teaching, and is on faculty at the Stafford Music Academy in Bloomington, Indiana. Outside of music she enjoys traveling, cuddling her cat, and reading.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
