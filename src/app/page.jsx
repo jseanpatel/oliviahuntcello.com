@@ -20,6 +20,12 @@ import logoEvansvillePhilharmonic from '@/images/logos/evansville-philharmonic.p
 import logoVanderbilt from "@/images/logos/vanderbilt.png"
 import logoSinfonietta from "@/images/logos/nashville-sinfonietta.png"
 import logoOwensboro from "@/images/logos/owensboro.png"
+import logoNationalMusicFestival from "@/images/logos/national-music-festival.png"
+
+import logoBloomingtonSeal from '@/images/logos/bloomington-seal.png'
+import logoSkylarkTrio from '@/images/logos/skylark-trio.png'
+import logoFestivalProvence from '@/images/logos/festival-provence.png'
+import logoHummingUnderMyFeet from '@/images/logos/humming-under-my-feet.png'
 
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -233,7 +239,7 @@ function Resume() {
     {
       company: 'National Music Festival Symphony Orchestra',
       title: 'Principle cellist',
-      logo: logoStarbucks,
+      logo: logoNationalMusicFestival,
       start: '2019',
       end: '2019',
     },
@@ -243,14 +249,14 @@ function Resume() {
     {
       company: 'Performer with Bloomington folk artist Carrie Newcomer',
       title: 'Principal cello',
-      logo: logoBillingsSymphonyOrchestra,
+      logo: logoBloomingtonSeal,
       start: '2022',
       end: '2022'
     },
     {
       company: 'The Skylark Trio',
       title: 'Founding cellist',
-      logo: logoAirbnb,
+      logo: logoSkylarkTrio,
       start: '2020',
       end: {
         label: 'Present',
@@ -267,14 +273,14 @@ function Resume() {
     {
       company: 'Festival d’Aix en Provence',
       title: 'String quartet performer',
-      logo: logoStarbucks,
+      logo: logoFestivalProvence,
       start: '2017',
       end: '2017',
     },
     {
       company: '“A Humming Under My Feet”',
       title: 'Annual performer',
-      logo: logoStarbucks,
+      logo: logoHummingUnderMyFeet,
       start: '2017',
       end: '2019',
     },
