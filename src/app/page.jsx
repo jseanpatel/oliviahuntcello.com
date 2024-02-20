@@ -379,7 +379,7 @@ export default async function Home() {
             
             <SocialLink
               href="#"
-              aria-label="Follow on LinkedIn"
+              aria-label="Connect on LinkedIn"
               icon={LinkedInIcon}
             />
           </div>
