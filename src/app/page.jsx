@@ -17,10 +17,10 @@ import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoBillingsSymphonyOrchestra from '@/images/logos/billings-symphony-orchestra.png'
 import logoTerreHaute from '@/images/logos/thso.png'
 import logoEvansvillePhilharmonic from '@/images/logos/evansville-philharmonic.png'
-import logoVanderbilt from "@/images/logos/vanderbilt.png"
-import logoSinfonietta from "@/images/logos/nashville-sinfonietta.png"
-import logoOwensboro from "@/images/logos/owensboro.png"
-import logoNationalMusicFestival from "@/images/logos/national-music-festival.png"
+import logoVanderbilt from '@/images/logos/vanderbilt.png'
+import logoSinfonietta from '@/images/logos/nashville-sinfonietta.png'
+import logoOwensboro from '@/images/logos/owensboro.png'
+import logoNationalMusicFestival from '@/images/logos/national-music-festival.png'
 
 import logoBloomingtonSeal from '@/images/logos/bloomington-seal.png'
 import logoSkylarkTrio from '@/images/logos/skylark-trio.png'
@@ -32,27 +32,15 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import {  getAllArticles } from '@/lib/writing'
+import { getAllArticles } from '@/lib/writing'
 import { formatDate } from '@/lib/formatDate'
 
 function MailIcon(props) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        fillRule="evenodd"
+        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
       />
     </svg>
   )
@@ -97,9 +85,7 @@ function ArrowDownIcon(props) {
 function Article({ article }) {
   return (
     <Card as="article">
-      <Card.Title href={`/writing/${article.slug}`}>
-        {article.title}
-      </Card.Title>
+      <Card.Title href={`/writing/${article.slug}`}>{article.title}</Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
@@ -136,7 +122,7 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
+          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-green-500 focus:outline-none focus:ring-4 focus:ring-green-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-green-400 dark:focus:ring-green-400/10"
         />
         <Button type="submit" className="flex-none ml-4">
           Join
@@ -227,7 +213,7 @@ function Resume() {
       title: 'Principle cellist',
       logo: logoVanderbilt,
       start: '2019',
-      end: '2019'
+      end: '2019',
     },
     {
       company: 'Nashville Sinfonietta',
@@ -251,7 +237,7 @@ function Resume() {
       title: 'Principal cello',
       logo: logoBloomingtonSeal,
       start: '2022',
-      end: '2022'
+      end: '2022',
     },
     {
       company: 'The Skylark Trio',
@@ -307,7 +293,6 @@ function Resume() {
           </a>
           <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
-        
       </div>
       <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
         <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -330,6 +315,39 @@ function Resume() {
         </Button>
       </div>
     </>
+  )
+}
+
+function Testimonial() {
+  return (
+    <section className="px-6 py-4 lg:px-8">
+      <figure className="max-w-2xl mx-auto">
+        <blockquote className="mt-2 text-xl font-semibold leading-8 tracking-tight text-zinc-800 sm:text-2xl sm:leading-9 dark:text-zinc-100">
+          <p>
+            “Olivia&apos;s command of the cello is extraordinary, infusing each
+            note with profound emotion and depth. Her unwavering commitment to
+            music is both inspiring and commendable. As a seasoned veteran in
+            the field, I can unequivocally attest to Olivia&apos;s exceptional talent
+            and predict a future of great success in her musical pursuits.”
+          </p>
+        </blockquote>
+        <figcaption className="flex items-center mt-10 gap-x-6">
+          <img
+            className="w-12 h-12 rounded-full bg-gray-50"
+            src="https://images.unsplash.com/photo-1616693630344-85d96ffc664b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VpdCUyMGFuZCUyMHRpZSUyMG11c2ljaWFufGVufDB8fDB8fHww"
+            alt=""
+          />
+          <div className="text-sm leading-6">
+            <div className="font-semibold text-zinc-800 dark:text-zinc-100">
+              Peter H.
+            </div>
+            <div className="mt-0.5 text-zinc-800 dark:text-zinc-100">
+              Cello Student
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
   )
 }
 
@@ -371,24 +389,20 @@ export default async function Home() {
             Musician, teacher, friend.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-             Olivia Hunt is an orchestral player and chamber musician based in
+            Olivia Hunt is an orchestral player and chamber musician based in
             Bloomington, Indiana. She has performed across the United States and
             Europe. She is a private cello instructor and a lifelong learner of
             music.
           </p>
           <div className="flex gap-6 mt-6">
-            <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
-              href="#"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            
-            <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/oliviahuntcello/"
               aria-label="Connect on LinkedIn"
               icon={LinkedInIcon}
             />
+            <SocialLink href="mailto:olivia.c.hunt@gmail.com" icon={MailIcon}>
+              Send an email
+            </SocialLink>
           </div>
         </div>
       </Container>
@@ -396,9 +410,11 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
+            {/* {articles.map((article) => (
               <Article key={article.slug} article={article} />
-            ))}
+            ))} */}
+            <Testimonial />
+           
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             {/* <Newsletter /> */}

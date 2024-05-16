@@ -125,8 +125,10 @@ function MobileNavigation(props) {
             <nav className="mt-6">
               <ul className="-my-2 text-base divide-y divide-zinc-100 text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/lessons">Lessons</MobileNavItem>
-                <MobileNavItem href="/writing">Writing</MobileNavItem>
+                <MobileNavItem href="/services">Services</MobileNavItem>
+                <MobileNavItem href="/gallery">Gallery</MobileNavItem>
+
+                {/* <MobileNavItem href="/writing">Writing</MobileNavItem> */}
                 <MobileNavItem href="/contact">Contact</MobileNavItem>
               </ul>
             </nav>
@@ -147,13 +149,13 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400',
+            ? 'text-green-500 dark:text-green-400'
+            : 'hover:text-green-500 dark:hover:text-green-400',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-green-500/0 via-green-500/40 to-green-500/0 dark:from-green-400/0 dark:via-green-400/40 dark:to-green-400/0" />
         )}
       </Link>
     </li>
@@ -165,8 +167,10 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-zinc-800 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/lessons">Lessons</NavItem>
-        <NavItem href="/writing">Writing</NavItem>
+        <NavItem href="/services">Services</NavItem>
+        <NavItem href="/gallery">Gallery</NavItem>
+
+        {/* <NavItem href="/writing">Writing</NavItem> */}
         <NavItem href="/contact">Contact</NavItem>
       </ul>
     </nav>
@@ -189,8 +193,8 @@ function ThemeToggle() {
       className="px-3 py-2 transition rounded-full shadow-lg group bg-white/90 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
+      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-green-50 [@media(prefers-color-scheme:dark)]:stroke-green-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-green-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-green-600" />
+      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-green-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-green-500" />
     </button>
   )
 }

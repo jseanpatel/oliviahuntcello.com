@@ -3,14 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  XIcon,
-  TwitterIcon,
-
-} from '@/components/SocialIcons'
+import { LinkedInIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -18,9 +11,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="flex text-sm font-medium transition group text-zinc-800 hover:text-green-500 dark:text-zinc-200 dark:hover:text-green-500"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
+        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-green-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -41,7 +34,7 @@ function MailIcon(props) {
 export const metadata = {
   title: 'About',
   description:
-  'I’m Olivia Hunt. I live in Bloomington, Indiana where I work as a cellist and teacher.',
+    'I’m Olivia Hunt. I live in Bloomington, Indiana where I work as a cellist and teacher.',
 }
 
 export default function About() {
@@ -54,7 +47,7 @@ export default function About() {
               src={portraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="object-cover border-2 border-black aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 dark:border-white dark:border-zinc-700 "
+              className="object-cover border-2 border-black aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700 dark:bg-zinc-800 "
             />
           </div>
         </div>
@@ -64,54 +57,40 @@ export default function About() {
           </h1>
           <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
             <p>
-              Cellist Olivia Hunt grew up in Milton, Georgia where she began
-              learning the cello in school at age 9. She attended Vanderbilt
-              University’s Blair School of Music, where she earned her
-              Bachelor’s in Music under the instruction of Dr. Felix Wang.
+            Cellist Olivia Hunt began her musical journey at age 9 in Atlanta. She went on to earn her Bachelor&apos;s at Vanderbilt University&apos;s Blair School of Music under Dr. Felix Wang. During her undergraduate studies, she performed with the Eschaton New Music Ensemble, Nashville Sinfonietta, and at the Festival d&apos;Aix en Provence. After graduating, she continued her studies at Indiana University with cellist Eric Kim, obtaining her Master&apos;s and Performer&apos;s Diploma.            </p>
+            <p>
+            Hunt has performed at renowned festivals worldwide, including the Aspen Music Festival, Green Mountain Chamber Music Festival, Brancaleoni International Music Festival, and National Music Festival. She is currently the Assistant Principal Cellist of the Billings Symphony and a substitute with the Owensboro Symphony Orchestra and Evansville Philharmonic.
             </p>
             <p>
-              While an undergraduate, she performed with the Nashville
-              Sinfonietta, spent a semester studying music at the Conservatorium
-              van Amsterdam, and performed as part of the Festival d’Aix en
-              Provence with her string quartet.
+            Passionate about teaching, Hunt spent two years on the faculty at the Stafford Music Academy in Bloomington, Indiana. She is now based in Los Angeles, California, with her cat, Rory.
             </p>
-            <p>
-              Following graduation, she continued her studies at Indiana
-              University with Eric Kim, where she earned her Master’s in Music
-              and Performer’s Diploma in Solo Cello Performance. She has
-              attended festivals such as the Aspen Music Festival, Green
-              Mountain Chamber Music Festival, Brancaleoni International Music
-              Festival, and National Music Festival.
-            </p>
-            <p>
-              She is currently the Assistant Principal Cellist of the Billings
-              Symphony and acts as a substitute in the Owensboro Symphony
-              Orchestra and Evansville Philharmonic. In addition to performing
-              she has a passion for teaching, and is on faculty at the Stafford
-              Music Academy in Bloomington, Indiana. Outside of music she enjoys
-              traveling, cuddling her cat, and reading.
-            </p>
+           
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
+            {/* <SocialLink href="#" icon={XIcon}>
               Follow on Twitter
             </SocialLink>
             <SocialLink href="#" icon={InstagramIcon} className="mt-4">
               Follow on Instagram
-            </SocialLink>
-         
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            </SocialLink> */}
+
+            <SocialLink
+              href="https://www.linkedin.com/in/oliviahuntcello/"
+              icon={LinkedInIcon}
+              className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
+            >
               Connect on LinkedIn
             </SocialLink>
             <SocialLink
-              href="olivia.c.hunt@gmail.com"
+              href="mailto:olivia.c.hunt@gmail.com"
               icon={MailIcon}
-              className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
+              className="mt-4"
             >
-              olivia.c.hunt@gmail.com
+              Send an email
             </SocialLink>
+            
           </ul>
         </div>
       </div>
