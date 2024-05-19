@@ -169,6 +169,42 @@ function Role({ role }) {
   )
 }
 
+function AboutPreview() {
+  return (
+    <div className="space-y-8">
+      <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
+        About Olivia
+      </h2>
+      <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
+        <p>
+          Cellist Olivia Hunt began her musical journey at age 9 in Atlanta. She
+          went on to earn her Bachelor&apos;s at Vanderbilt University&apos;s
+          Blair School of Music under Dr. Felix Wang. During her undergraduate
+          studies, she performed with the Eschaton New Music Ensemble, Nashville
+          Sinfonietta, and at the Festival d&apos;Aix en Provence. After
+          graduating, she continued her studies at Indiana University with
+          cellist Eric Kim, obtaining her Master&apos;s and Performer&apos;s
+          Diploma.{' '}
+        </p>
+        <p>
+          Hunt has performed at renowned festivals worldwide, including the
+          Aspen Music Festival, Green Mountain Chamber Music Festival,
+          Brancaleoni International Music Festival, and National Music Festival.
+          She is currently the Assistant Principal Cellist of the Billings
+          Symphony and a substitute...  <Link
+        href="/about"
+        className="text-green-500 cursor-pointer hover:text-green-600 dark:text-green-400 dark:hover:text-green-500"
+      >
+        Read more
+      </Link>
+        </p>
+       
+      </div>
+     
+    </div>
+  )
+}
+
 function Resume() {
   let orchestralResume = [
     {
@@ -318,46 +354,13 @@ function Resume() {
   )
 }
 
-function Testimonial() {
-  return (
-    <section className="px-6 py-4 lg:px-8">
-      <figure className="max-w-2xl mx-auto">
-        <blockquote className="mt-2 text-xl font-semibold leading-8 tracking-tight text-zinc-800 sm:text-2xl sm:leading-9 dark:text-zinc-100">
-          <p>
-            “Olivia&apos;s command of the cello is extraordinary, infusing each
-            note with profound emotion and depth. Her unwavering commitment to
-            music is both inspiring and commendable. As a seasoned veteran in
-            the field, I can unequivocally attest to Olivia&apos;s exceptional talent
-            and predict a future of great success in her musical pursuits.”
-          </p>
-        </blockquote>
-        <figcaption className="flex items-center mt-10 gap-x-6">
-          <img
-            className="w-12 h-12 rounded-full bg-gray-50"
-            src="https://images.unsplash.com/photo-1616693630344-85d96ffc664b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VpdCUyMGFuZCUyMHRpZSUyMG11c2ljaWFufGVufDB8fDB8fHww"
-            alt=""
-          />
-          <div className="text-sm leading-6">
-            <div className="font-semibold text-zinc-800 dark:text-zinc-100">
-              Peter H.
-            </div>
-            <div className="mt-0.5 text-zinc-800 dark:text-zinc-100">
-              Cello Student
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-    </section>
-  )
-}
-
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="flex justify-center gap-5 py-4 -my-4 overflow-hidden sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {[image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -410,11 +413,11 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
+            <AboutPreview />
             {/* {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))} */}
-            <Testimonial />
-           
+            {/* <Testimonial /> */}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             {/* <Newsletter /> */}

@@ -37,6 +37,39 @@ export const metadata = {
     'I’m Olivia Hunt. I live in Bloomington, Indiana where I work as a cellist and teacher.',
 }
 
+function Testimonial() {
+  return (
+    <section className="px-6 py-4 lg:px-8">
+      <figure className="max-w-2xl mx-auto">
+        <blockquote className="mt-2 text-xl font-semibold leading-8 tracking-tight text-zinc-800 sm:text-2xl sm:leading-9 dark:text-zinc-100">
+          <p>
+            “Olivia&apos;s command of the cello is extraordinary, infusing each
+            note with profound emotion and depth. Her unwavering commitment to
+            music is both inspiring and commendable. As a seasoned veteran in
+            the field, I can unequivocally attest to Olivia&apos;s exceptional talent
+            and predict a future of great success in her musical pursuits.”
+          </p>
+        </blockquote>
+        <figcaption className="flex items-center mt-10 gap-x-6">
+          <img
+            className="w-12 h-12 rounded-full bg-gray-50"
+            src="https://images.unsplash.com/photo-1616693630344-85d96ffc664b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VpdCUyMGFuZCUyMHRpZSUyMG11c2ljaWFufGVufDB8fDB8fHww"
+            alt=""
+          />
+          <div className="text-sm leading-6">
+            <div className="font-semibold text-zinc-800 dark:text-zinc-100">
+              Peter H.
+            </div>
+            <div className="mt-0.5 text-zinc-800 dark:text-zinc-100">
+              Cello Student
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  )
+}
+
 export default function About() {
   return (
     <Container className="mt-16 sm:mt-32">
@@ -49,6 +82,7 @@ export default function About() {
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="object-cover border-2 border-black aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700 dark:bg-zinc-800 "
             />
+            
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
