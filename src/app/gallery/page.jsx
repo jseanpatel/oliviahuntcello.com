@@ -1,10 +1,60 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { LinkedInIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+
+const videos = [
+  {
+    id: 1,
+    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    title: 'Rachmaninoff Sonata for Cello and Piano',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 2,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Bach Cello Suite no. 6 in D major',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 3,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Bach Cello Suite no 3 in C Major, Prelude',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 4,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Bach Cello Suite no. 3 in C Major, Sarabande',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 5,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Bach Cello Suite no. 3 in C Major, Gigue',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 6,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Barber Cello Sonata op. 6',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+  {
+    id: 7,
+    src: 'https://www.youtube.com/watch?v=xAbfDTLZneE',
+    title: 'Variations on a Rococo Theme op. 33',
+    description: 'Performed at the Aspen Music Festival, July 2021.',
+    date: 'July 10, 2021',
+  },
+]
+
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -47,53 +97,21 @@ export default function About() {
           </h1>
           <div>
             <ul className="mt-4 space-y-8 lg:space-y-4">
-              {/* Sample video entry */}
-              <li className="w-full">
-                <div className="relative overflow-hidden aspect-w-16 aspect-h-9">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/wehEeSx18cg" // Use the embed URL here
-                    title="YouTube Video"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <h3 className="mt-2 font-medium">Bach Cello Suite No.1</h3>
-                <p className="text-sm text-gray-600">
-                  Performed at the Aspen Music Festival, July 2021.
-                </p>
-                <p className="text-xs text-gray-500">July 10, 2021</p>
-              </li>
-              {/* Add more video entries here */}
-              <li className="w-full">
-                <div className="relative overflow-hidden aspect-w-16 aspect-h-9">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/videoID"
-                    title="Video title"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <h3 className="mt-2 font-medium">Bach Cello Suite No.1</h3>
-                <p className="text-sm text-gray-600">
-                  Performed at the Aspen Music Festival, July 2021.
-                </p>
-                <p className="text-xs text-gray-500">July 10, 2021</p>
-              </li>
-              <li className="w-full">
-                <div className="relative overflow-hidden aspect-w-16 aspect-h-9">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/videoID"
-                    title="Video title"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <h3 className="mt-2 font-medium">Bach Cello Suite No.1</h3>
-                <p className="text-sm text-gray-600">
-                  Performed at the Aspen Music Festival, July 2021.
-                </p>
-                <p className="text-xs text-gray-500">July 10, 2021</p>
-              </li>
+            {videos.map((video) => (
+                 <li key={video.id} className="w-full">
+                  <div className="relative overflow-hidden aspect-w-16 aspect-h-9">
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={video.src}
+                      title={video.title}
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <h3 className="mt-2 font-medium">{video.title}</h3>
+                  <p className="text-sm text-gray-600">{video.description}</p>
+                  <p className="text-xs text-gray-500">{video.date}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

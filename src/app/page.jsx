@@ -6,14 +6,9 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
-  XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+
 import logoBillingsSymphonyOrchestra from '@/images/logos/billings-symphony-orchestra.png'
 import logoTerreHaute from '@/images/logos/thso.png'
 import logoEvansvillePhilharmonic from '@/images/logos/evansville-philharmonic.png'
@@ -31,7 +26,7 @@ import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image5 from '@/images/photos/image-5.jpeg'
 import { getAllArticles } from '@/lib/writing'
 import { formatDate } from '@/lib/formatDate'
 
@@ -176,7 +171,7 @@ function AboutPreview() {
         About Olivia
       </h2>
       <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
-        <p>
+        <p className="leading-8">
           Cellist Olivia Hunt began her musical journey at age 9 in Atlanta. She
           went on to earn her Bachelor&apos;s at Vanderbilt University&apos;s
           Blair School of Music under Dr. Felix Wang. During her undergraduate
@@ -186,7 +181,7 @@ function AboutPreview() {
           cellist Eric Kim, obtaining her Master&apos;s and Performer&apos;s
           Diploma.{' '}
         </p>
-        <p>
+        <p className="leading-8">
           Hunt has performed at renowned festivals worldwide, including the
           Aspen Music Festival, Green Mountain Chamber Music Festival,
           Brancaleoni International Music Festival, and National Music Festival.
