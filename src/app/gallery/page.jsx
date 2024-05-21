@@ -82,7 +82,7 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: 'About',
+  title: 'Gallery',
   description:
     'I’m Olivia Hunt. I live in Bloomington, Indiana where I work as a cellist and teacher.',
 }

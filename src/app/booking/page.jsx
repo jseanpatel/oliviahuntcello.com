@@ -3,7 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import lessonInfoPortraitImage from '@/images/lesson-info-portrait.jpg'
+import bookingInfoPortraitImage from '@/images/booking-info-portrait-image.jpeg'
 
 function SocialLink({
   className,
@@ -36,59 +36,60 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: ' Information about private lessons',
+  title: 'Booking',
   description:
-    'Private cello lessons are offered to cellists of any age or skill level who are interested in establishing a strong technical foundation and developing their personal artistry. The approach is individualistic and flexible, based on the needs and interests of the student.',
+    'Book Olivia Hunt, a professional cellist, for your private events, weddings, corporate functions, and more. Experience a versatile and professional performance tailored to your special occasion.',
 }
 
 export default function About() {
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:pl-20">
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
+      <div className="lg:pr-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
-              src={lessonInfoPortraitImage}
+              src={bookingInfoPortraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="object-cover border-2 border-black aspect-rectangle rotate-2 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700"
+              className="object-cover border-2 border-black aspect-rectangle -rotate-2 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700"
             />
             
           </div>
         </div>
-        <div className="lg:order-first lg:row-span-2">
+        
+         <div className="lg:order-last lg:row-span-2">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-              Information about private lessons
-            </h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+  Information about private bookings
+</h1>
 
-            <section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
-              <p>
-                Private cello lessons are offered to cellists of any age or
-                skill level who are interested in establishing a strong
-                technical foundation and developing their personal artistry. The
-                approach is individualistic and flexible, based on the needs and
-                interests of the student.
-              </p>
-            </section>
+<section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
+  <p>
+    Private bookings are available for a variety of events including weddings,
+    corporate functions, private parties, and more. With a repertoire that spans
+    classical, contemporary, and popular music, Olivia provides a versatile and
+    professional performance tailored to the occasion.
+  </p>
+</section>
 
-            <section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
-              <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
-                Topics focused on
-              </h2>
-              <ol className="pl-5 space-y-2 list-decimal">
-                <li>Instrument tuning/maintenance</li>
-                <li>Developing a warm-up routine</li>
-                <li>Practice techniques</li>
-                <li>Managing performance anxiety</li>
-                <li>Musical interpretation</li>
-              </ol>
-              <p>
-                Trial lessons are available and recurring lessons are offered in
-                30-minute or hour-long sessions. Please send a message below for
-                a follow-up.
-              </p>
-            </section>
+<section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
+  <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
+    Services offered
+  </h2>
+  <ol className="pl-5 space-y-2 list-decimal">
+    <li>Wedding ceremonies and receptions</li>
+    <li>Corporate events and functions</li>
+    <li>Private parties and gatherings</li>
+    <li>Music for special occasions and anniversaries</li>
+    <li>Customized performances upon request</li>
+  </ol>
+  <p>
+    Each performance is tailored to meet the specific needs and preferences of the
+    client. Please send a message below for a personalized quote and to discuss
+    your event details.
+  </p>
+</section>
+
 
             
           </div>
@@ -96,7 +97,7 @@ export default function About() {
           <div>
             <div>
               <div className="max-w-xl mx-auto lg:mx-0 lg:max-w-lg ">
-                <form action="/thank-you" method="POST" className="pt-8 mt-8 border-t border-gray-900/10 dark:border-zinc-400" name="lesson-inquiry" netlify>
+                <form action="/thank-you" method="POST" className="pt-8 mt-8 border-t border-gray-900/10 dark:border-zinc-400" name="booking-inquiry" netlify>
                 <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="">
                       <label
@@ -181,9 +182,8 @@ export default function About() {
                           htmlFor="message"
                           className="block text-sm font-semibold leading-6 text-zinc-600 dark:text-zinc-400"
                         >
-                          Please describe what you are looking for in a lesson,
-                          be sure to include your current level of playing and
-                          any other relevant information
+                            Please describe the event you are booking for, be sure to include the date,
+  time, location, and any specific musical requests.
                         </label>
                       </div>
                       <div className="mt-2.5">

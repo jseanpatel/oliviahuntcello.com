@@ -22,12 +22,9 @@ export function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex flex-wrap justify-center text-sm font-medium gap-x-6 gap-y-1 text-zinc-800 dark:text-zinc-200">
                 <NavLink href="/about">About</NavLink>
-                <NavLink href="/services">Services</NavLink>
+                <NavLink href="/lessons">Lessons</NavLink>
                 <NavLink href="/booking">Booking</NavLink>
-
-
                 <NavLink href="/gallery">Gallery</NavLink>
-                {/* <NavLink href="/writing">Writing</NavLink> */}
                 <NavLink href="/contact">Contact</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
