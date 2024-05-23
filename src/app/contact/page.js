@@ -82,7 +82,7 @@ export default function Contact() {
           method="POST"
           className="max-w-xl mx-auto mt-16 sm:mt-20"
           name="contact"
-          netlify
+          netlify="true"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
