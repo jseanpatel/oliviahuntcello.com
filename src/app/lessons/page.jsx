@@ -38,9 +38,9 @@ export const metadata = {
 
 function Testimonial() {
   return (
-    <div className="flex flex-col lg:pb-0">
+    <div className="flex flex-col text-zinc-600 lg:pb-0 dark:text-zinc-400">
       <figure className="flex flex-col justify-between flex-auto">
-        <blockquote className="leading-8 text-gray-900 text-md">
+        <blockquote className="leading-8 text-md">
           <p className="italic">
             “Absolutely wonderful! Olivia is an incredibly warm and nurturing
             teacher that has realistic goals for students while also being
@@ -51,13 +51,13 @@ function Testimonial() {
         </blockquote>
         <figcaption className="flex items-center mt-4 gap-x-6">
           <div className="text-base">
-            <div className="font-semibold text-gray-900">Jospeh I.</div>
-            <div className="mt-1 text-gray-500">Student</div>
+            <div className="font-semibold">Jospeh I.</div>
+            <div className="mt-1 ">Student</div>
           </div>
         </figcaption>
       </figure>
       <figure className="flex flex-col justify-between flex-auto mt-8">
-        <blockquote className="leading-8 text-gray-900 text-md">
+        <blockquote className="leading-8 text-md">
           <p className="italic">
             “Olivia is amazing! I started taking lessons with her after taking a
             decade long break from cello, and I was really nervous about jumping
@@ -70,8 +70,8 @@ function Testimonial() {
         </blockquote>
         <figcaption className="flex items-center mt-4 gap-x-6">
           <div className="text-base">
-            <div className="font-semibold text-gray-900">Maggie M.</div>
-            <div className="mt-1 text-gray-500">Student</div>
+            <div className="font-semibold ">Maggie M.</div>
+            <div className="mt-1">Student</div>
           </div>
         </figcaption>
       </figure>
