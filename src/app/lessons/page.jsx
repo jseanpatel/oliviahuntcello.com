@@ -143,6 +143,7 @@ export default function About() {
                   method="POST"
                   className="mt-8 border-t border-gray-900/10 dark:border-zinc-400"
                   name="lesson-inquiry"
+                  data-netlify="true"
                   netlify="true"
                 >
                   <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
