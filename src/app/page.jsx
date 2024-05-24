@@ -102,6 +102,7 @@ function Newsletter() {
   return (
     <form
     name="newsletter" method="POST" data-netlify="true"
+    netlify
       action="/thank-you"
       className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
     >

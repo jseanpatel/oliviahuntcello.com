@@ -145,6 +145,7 @@ export default function About() {
                   name="lesson-inquiry"
                   data-netlify="true"
                   netlify="true"
+                  netlify
                 >
                   <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="">
