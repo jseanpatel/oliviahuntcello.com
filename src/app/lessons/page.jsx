@@ -147,7 +147,7 @@ export default function About() {
                   netlify
                 >
                   <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
-                  <input type="hidden" name="lesson-inquiry" value="lesson-inquiry" />
+                  <input type="hidden" name="form-name" value="lesson-inquiry" />
                     <div className="">
                       <label
                         htmlFor="first-name"
