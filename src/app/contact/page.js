@@ -2,10 +2,7 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-function SpeakingSection({
-  children,
-  ...props
-}) {
+function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
       <div className="space-y-16">{children}</div>
@@ -27,13 +24,7 @@ function ChevronDownIcon(props) {
   )
 }
 
-function Appearance({
-  title,
-  description,
-  event,
-  cta,
-  href,
-}) {
+function Appearance({ title, description, event, cta, href }) {
   return (
     <Card as="article">
       <Card.Title as="h3" href={href}>
@@ -55,7 +46,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <SimpleLayout title="" intro="">
-      <div className="px-6 isolate lg:px-8">
+      <div className="isolate px-6 lg:px-8">
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true"
@@ -68,8 +59,8 @@ export default function Contact() {
             }}
           />
         </div>
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-zinc-100">
             Contact
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600 dark:text-zinc-400">
@@ -78,14 +69,20 @@ export default function Contact() {
           </p>
         </div>
         <form
-          action="#"
+          action="/thank-you/"
           method="POST"
-          className="max-w-xl mx-auto mt-16 sm:mt-20"
-          name="contact-inquiry"
-          netlify="true"
+          className="mx-auto mt-16 max-w-xl sm:mt-20"
+          name="general-contact-inquiry"
           data-netlify="true"
+          netlify-honeypot="bot-field"
         >
+          <input type="hidden" name="form-name" value="general-contact-inquiry" />
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
             <div>
               <label
                 htmlFor="first-name"
@@ -138,7 +135,7 @@ export default function Contact() {
                 />
               </div>
             </div>
-            
+
             <div className="sm:col-span-2">
               <label
                 htmlFor="message"
@@ -160,7 +157,7 @@ export default function Contact() {
           <div className="mt-10">
             <button
               type="submit"
-              className="block w-full rounded-md bg-gray-900 dark:bg-zinc-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:opacity-75 cursor-pointer"
+              className="block w-full cursor-pointer rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-zinc-700"
             >
               Send message
             </button>

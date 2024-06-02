@@ -5,19 +5,14 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import bookingInfoPortraitImage from '@/images/booking-info-portrait-image.jpeg'
 
-function SocialLink({
-  className,
-  href,
-  children,
-  icon: Icon,
-}) {
+function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -45,60 +40,76 @@ export default function About() {
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
-      <div className="lg:pr-20">
+        <div className="lg:pr-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
               src={bookingInfoPortraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="object-cover border-2 border-black aspect-rectangle -rotate-2 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700"
+              className="aspect-rectangle -rotate-2 rounded-2xl border-2 border-black bg-zinc-100 object-cover dark:border-white dark:border-zinc-700"
             />
-            
           </div>
         </div>
-        
-         <div className="lg:order-last lg:row-span-2">
+
+        <div className="lg:order-last lg:row-span-2">
           <div>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-  Information about private bookings
-</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+              Information about private bookings
+            </h1>
 
-<section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
-  <p>
-    Private bookings are available for a variety of events including weddings,
-    corporate functions, private parties, and more. With a repertoire that spans
-    classical, contemporary, and popular music, Olivia provides a versatile and
-    professional performance tailored to the occasion.
-  </p>
-</section>
+            <section className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+              <p>
+                Private bookings are available for a variety of events including
+                weddings, corporate functions, private parties, and more. With a
+                repertoire that spans classical, contemporary, and popular
+                music, Olivia provides a versatile and professional performance
+                tailored to the occasion.
+              </p>
+            </section>
 
-<section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
-  <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
-    Services offered
-  </h2>
-  <ol className="pl-5 space-y-2 list-decimal">
-    <li>Wedding ceremonies and receptions</li>
-    <li>Corporate events and functions</li>
-    <li>Private parties and gatherings</li>
-    <li>Music for special occasions and anniversaries</li>
-    <li>Customized performances upon request</li>
-  </ol>
-  <p>
-    Each performance is tailored to meet the specific needs and preferences of the
-    client. Please send a message below for a personalized quote and to discuss
-    your event details.
-  </p>
-</section>
-
-
-            
+            <section className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+              <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
+                Services offered
+              </h2>
+              <ol className="list-decimal space-y-2 pl-5">
+                <li>Wedding ceremonies and receptions</li>
+                <li>Corporate events and functions</li>
+                <li>Private parties and gatherings</li>
+                <li>Music for special occasions and anniversaries</li>
+                <li>Customized performances upon request</li>
+              </ol>
+              <p>
+                Each performance is tailored to meet the specific needs and
+                preferences of the client. Please send a message below for a
+                personalized quote and to discuss your event details.
+              </p>
+            </section>
           </div>
 
           <div>
             <div>
-              <div className="max-w-xl mx-auto lg:mx-0 lg:max-w-lg ">
-                <form action="/thank-you" method="POST" className="mt-8 border-t border-gray-900/10 dark:border-zinc-400" name="booking-inquiry" data-netlify="true" netlify>
-                <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg ">
+                <form
+                  action="/thank-you/"
+                  method="POST"
+                  className="mt-8 border-t border-gray-900/10 dark:border-zinc-400"
+                  name="private-booking-inquiry"
+                  data-netlify="true"
+                  netlify
+                >
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="private-booking-inquiry"
+                  />
+
+                  <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                    <p class="hidden">
+                      <label>
+                        Don’t fill this out if you’re human:{' '}
+                        <input name="bot-field" />
+                      </label>
+                    </p>
                     <div className="">
                       <label
                         htmlFor="first-name"
@@ -182,8 +193,9 @@ export default function About() {
                           htmlFor="message"
                           className="block text-sm font-semibold leading-6 text-zinc-600 dark:text-zinc-400"
                         >
-                            Please describe the event you are booking for, be sure to include the date,
-  time, location, and any specific musical requests.
+                          Please describe the event you are booking for, be sure
+                          to include the date, time, location, and any specific
+                          musical requests.
                         </label>
                       </div>
                       <div className="mt-2.5">
@@ -198,15 +210,14 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-end mt-10">
+                  <div className="mt-10 flex justify-end">
                     <button
                       type="submit"
-                      className="rounded-md bg-gray-900 cursor-pointer hover:opacity-75 px-3.5 py-2.5 text-center text-sm font-semibold font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 dark:bg-zinc-700 " 
+                      className="cursor-pointer rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold font-semibold text-white shadow-sm hover:opacity-75 focus-visible:outline focus-visible:outline-2 dark:bg-zinc-700 "
                     >
                       Send message
                     </button>
                   </div>
-                  
                 </form>
               </div>
             </div>
