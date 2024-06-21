@@ -10,9 +10,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -39,8 +39,8 @@ export const metadata = {
 function Testimonial() {
   return (
     <div className="flex flex-col text-zinc-600 lg:pb-0 dark:text-zinc-400">
-      <figure className="flex flex-auto flex-col justify-between">
-        <blockquote className="text-md leading-8">
+      <figure className="flex flex-col justify-between flex-auto">
+        <blockquote className="leading-8 text-md">
           <p className="italic">
             “Absolutely wonderful! Olivia is an incredibly warm and nurturing
             teacher that has realistic goals for students while also being
@@ -49,15 +49,15 @@ function Testimonial() {
             slowly figure them out. Could not recommend highly enough!”
           </p>
         </blockquote>
-        <figcaption className="mt-4 flex items-center gap-x-6">
+        <figcaption className="flex items-center mt-4 gap-x-6">
           <div className="text-base">
             <div className="font-semibold">Jospeh I.</div>
             <div className="mt-1 ">Student</div>
           </div>
         </figcaption>
       </figure>
-      <figure className="mt-8 flex flex-auto flex-col justify-between">
-        <blockquote className="text-md leading-8">
+      <figure className="flex flex-col justify-between flex-auto mt-8">
+        <blockquote className="leading-8 text-md">
           <p className="italic">
             “Olivia is amazing! I started taking lessons with her after taking a
             decade long break from cello, and I was really nervous about jumping
@@ -68,7 +68,7 @@ function Testimonial() {
             definitely recommend her!”
           </p>
         </blockquote>
-        <figcaption className="mt-4 flex items-center gap-x-6">
+        <figcaption className="flex items-center mt-4 gap-x-6">
           <div className="text-base">
             <div className="font-semibold ">Maggie M.</div>
             <div className="mt-1">Student</div>
@@ -80,6 +80,28 @@ function Testimonial() {
 }
 
 export default function About() {
+ 
+
+  const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      try {
+          const myForm = event.target;
+          const formData = new FormData(myForm);
+          const res = await fetch('/lesson_inquiry_form.html', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(formData).toString()
+          });
+          if (res.status === 200) {
+              console.log('ok')
+          } else {
+       
+          }
+      } catch (e) {
+          
+      }
+  };
+
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -89,7 +111,7 @@ export default function About() {
               src={lessonInfoPortraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-rectangle rotate-2 rounded-2xl border-2 border-black bg-zinc-100 object-cover dark:border-white dark:border-zinc-700"
+              className="object-cover border-2 border-black aspect-rectangle rotate-2 rounded-2xl bg-zinc-100 dark:border-white dark:border-zinc-700"
             />
           </div>
         </div>
@@ -99,7 +121,7 @@ export default function About() {
               Information about private lessons
             </h1>
 
-            <section className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <p>
                 Private cello lessons are offered to cellists of any age or
                 skill level who are interested in establishing a strong
@@ -109,11 +131,11 @@ export default function About() {
               </p>
             </section>
 
-            <section className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
                 Topics focused on
               </h2>
-              <ol className="list-decimal space-y-2 pl-5">
+              <ol className="pl-5 space-y-2 list-decimal">
                 <li>Instrument tuning/maintenance</li>
                 <li>Developing a warm-up routine</li>
                 <li>Practice techniques</li>
@@ -127,7 +149,7 @@ export default function About() {
               </p>
             </section>
 
-            <section className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <section className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <h2 className="text-lg font-bold tracking-tight text-zinc-800 sm:text-xl dark:text-zinc-100">
                 Testimonials
               </h2>
@@ -137,9 +159,9 @@ export default function About() {
 
           <div>
             <div>
-              <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg ">
+              <div className="max-w-xl mx-auto lg:mx-0 lg:max-w-lg ">
                 <form
-                  action="/thank-you/"
+                  onSubmit={handleFormSubmit}
                   method="POST"
                   className="mt-8 border-t border-gray-900/10 dark:border-zinc-400"
                   name="private-lesson-inquiry"
@@ -151,7 +173,7 @@ export default function About() {
                       name="form-name"
                       value="prviate-lesson-inquiry"
                     />
-                  <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 mt-8 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <p class="hidden">
                       <label>
                         Don’t fill this out if you’re human:{' '}
@@ -259,7 +281,7 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-10 flex justify-end">
+                  <div className="flex justify-end mt-10">
                     <button
                       type="submit"
                       className="cursor-pointer rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold font-semibold text-white shadow-sm hover:opacity-75 focus-visible:outline focus-visible:outline-2 dark:bg-zinc-700 "
