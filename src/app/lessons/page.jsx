@@ -80,28 +80,6 @@ function Testimonial() {
 }
 
 export default function About() {
- 
-
-  const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      try {
-          const myForm = event.target;
-          const formData = new FormData(myForm);
-          const res = await fetch('/lesson_inquiry_form.html', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: new URLSearchParams(formData).toString()
-          });
-          if (res.status === 200) {
-              console.log('ok')
-          } else {
-       
-          }
-      } catch (e) {
-          
-      }
-  };
-
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -161,7 +139,7 @@ export default function About() {
             <div>
               <div className="max-w-xl mx-auto lg:mx-0 lg:max-w-lg ">
                 <form
-                  onSubmit={handleFormSubmit}
+                   action="/thank-you.html"
                   method="POST"
                   className="mt-8 border-t border-gray-900/10 dark:border-zinc-400"
                   name="private-lesson-inquiry"
