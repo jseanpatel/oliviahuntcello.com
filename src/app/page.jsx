@@ -26,7 +26,7 @@ import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpeg'
+import image5 from '@/images/photos/image-5.jpg'
 import { getAllArticles } from '@/lib/writing'
 import { formatDate } from '@/lib/formatDate'
 
@@ -389,10 +389,7 @@ export default async function Home() {
             Musician, teacher, collaborator
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Olivia Hunt is an orchestral player and chamber musician based in
-            Bloomington, Indiana. She has performed across the United States and
-            Europe. She is a private cello instructor and a lifelong learner of
-            music.
+          Cellist Olivia Hunt offers private lessons and performances throughout the Los Angeles area.
           </p>
           <div className="flex gap-6 mt-6">
             <SocialLink
